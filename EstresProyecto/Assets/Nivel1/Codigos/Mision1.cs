@@ -2,15 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mision1 : MonoBehaviour
+public class Misiones: MonoBehaviour
 {
     public ControladorVoz npc;
-    void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && npc != null && npc.MisionActual == 0)
+        if (npc == null) return;
+
+        if (other.CompareTag("Hojas") && npc.MisionActual == 0)
         {
-            Debug.Log("Copias hechas");
+            Debug.Log("Hojas listas");
+            npc.CompletarMision();
+        }
+        else if (other.CompareTag("Garrafon") && npc.MisionActual == 1)
+        {
+            Debug.Log("Garrafon ponido");
+            npc.CompletarMision();
+        }
+        else if (other.CompareTag("Teclado") && npc.MisionActual == 2)
+        {
+            Debug.Log("Teclado ya");
             npc.CompletarMision();
         }
     }
+
 }

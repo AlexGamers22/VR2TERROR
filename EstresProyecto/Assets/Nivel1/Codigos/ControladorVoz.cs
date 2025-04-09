@@ -30,7 +30,10 @@ public class ControladorVoz : MonoBehaviour
             { "hola", Hola },
             { "que hay", Hola },
             { "hey", Hola },
-
+            { "que hago", Trabajo },
+            { "que trabajo hago", Trabajo },
+            { "que mas hago", Trabajo },
+            { "que necesita", Trabajo },
             { "ayuda", Ayuda },
             { "necesito ayuda", Ayuda },
             { "ayudame", Ayuda }
@@ -76,7 +79,7 @@ public class ControladorVoz : MonoBehaviour
     {
         string[] ayudas =
         {
-            "No te voy ayudar siempre, burro",
+            "No te voy ayudar siempre, FLOJO",
             "No me estes molestando y PONTE A TRABAJAR"
         };
          int index = random.Next(ayudas.Length);
@@ -96,7 +99,7 @@ public class ControladorVoz : MonoBehaviour
                 textoPersonaje.text = "Necesito que saques copias y no lo eches a perder";
                 break;
             case 1:
-                textoPersonaje.text = "Cambia el garrafo    n RAPIDO, no ves que ya no hay agua";
+                textoPersonaje.text = "Cambia el garrafón RAPIDO, no ves que ya no hay agua";
                 break;
             case 2:
                 textoPersonaje.text = "Le falta el teclado a mi computadora , VE POR UNO RAPIDO";

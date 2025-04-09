@@ -877,7 +877,7 @@ AudioSource:
   m_GameObject: {fileID: 150845920}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 248799cb4acba48f7b3ee842a80f788c, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -16216,7 +16216,7 @@ GameObject:
   - component: {fileID: 1105803176}
   m_Layer: 0
   m_Name: garrafon (1)
-  m_TagString: garrafon
+  m_TagString: Garrafon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18983,7 +18983,7 @@ GameObject:
   - component: {fileID: 8259963199384246991}
   m_Layer: 0
   m_Name: garrafon
-  m_TagString: garrafon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27486,6 +27486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Escritorio
       objectReference: {fileID: 0}
+    - target: {fileID: 7640961690510485113, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
+      propertyPath: m_TagString
+      value: Teclado
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33709,7 +33713,7 @@ Transform:
   m_GameObject: {fileID: 7696548425647342336}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -8.679, y: 0.217, z: 0}
+  m_LocalPosition: {x: -8.105, y: 0.217, z: -2.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
