@@ -30,11 +30,7 @@ public class ControladorVoz : MonoBehaviour
             { "hola", Hola },
             { "que hay", Hola },
             { "hey", Hola },
-            { "¿qué hago?", Trabajo },
-            { "¿qué trabajo hago?", Trabajo },
-            { "¿qué más hago?", Trabajo },
-            { "¿qué necesita?", Trabajo },
-            { "¿que sigue?", Trabajo },
+
             { "ayuda", Ayuda },
             { "necesito ayuda", Ayuda },
             { "ayudame", Ayuda }
@@ -62,9 +58,9 @@ public class ControladorVoz : MonoBehaviour
     {
         string[] saludos =
         {
-            "Hey ¿listo para trabajar?",
+            "Hey estas listo para trabajar?",
             "Hola ponte a trabajar, YAAA",
-            "Hey no estés perdiendo el tiempo y ponte a trabajar"
+            "Hey no estes perdiendo el tiempo y ponte a trabajar"
         };
 
         int index = random.Next(saludos.Length);
@@ -80,7 +76,7 @@ public class ControladorVoz : MonoBehaviour
     {
         string[] ayudas =
         {
-            "No te voy ayudar siempre, INUTIL",
+            "No te voy ayudar siempre, burro",
             "No me estes molestando y PONTE A TRABAJAR"
         };
          int index = random.Next(ayudas.Length);
@@ -100,7 +96,7 @@ public class ControladorVoz : MonoBehaviour
                 textoPersonaje.text = "Necesito que saques copias y no lo eches a perder";
                 break;
             case 1:
-                textoPersonaje.text = "Cambia el garrafón RAPIDO, no ves que ya no hay agua";
+                textoPersonaje.text = "Cambia el garrafï¿½n RAPIDO, no ves que ya no hay agua";
                 break;
             case 2:
                 textoPersonaje.text = "Le falta el teclado a mi computadora , VE POR UNO RAPIDO";
@@ -132,7 +128,7 @@ public class ControladorVoz : MonoBehaviour
         if (misionActual < 3)
         {
             misionActual++;
-            Debug.Log("Misión completada. Nueva misión: " + misionActual);
+            Debug.Log("Mision completada. Nueva mision: " + misionActual);
         }
     }
 
@@ -144,7 +140,7 @@ public class ControladorVoz : MonoBehaviour
             {
                 Debug.Log("Escucha");
                 keyWordRecognizer.Start();
-                textoPersonaje.text = "¿Qué quieres?";
+                textoPersonaje.text = "Â¿Que quieres?";
                 ReproducirAudio(QuequieresClip);
             }
         }
