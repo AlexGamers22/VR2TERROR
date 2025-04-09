@@ -96,7 +96,7 @@ public class ControladorVoz : MonoBehaviour
                 textoPersonaje.text = "Necesito que saques copias y no lo eches a perder";
                 break;
             case 1:
-                textoPersonaje.text = "Cambia el garraf�n RAPIDO, no ves que ya no hay agua";
+                textoPersonaje.text = "Cambia el garrafo    n RAPIDO, no ves que ya no hay agua";
                 break;
             case 2:
                 textoPersonaje.text = "Le falta el teclado a mi computadora , VE POR UNO RAPIDO";
