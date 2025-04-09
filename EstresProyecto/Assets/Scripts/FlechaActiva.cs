@@ -12,6 +12,8 @@ public class FlechaActiva : MonoBehaviour
     
     public GameObject Tip;
 
+    public GameObject OtroTexto;
+
     private XRGrabInteractable grabInteractable;
 
     void Start()
@@ -40,6 +42,7 @@ public class FlechaActiva : MonoBehaviour
         {
             objetoAparece.SetActive(true); // Lo activamos al agarrar
             Tip.SetActive(true);
+            OtroTexto.SetActive(false);
         }
 
         if (Objetivo != null)

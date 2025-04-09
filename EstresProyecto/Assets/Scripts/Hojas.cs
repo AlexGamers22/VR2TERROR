@@ -10,9 +10,9 @@ public class Hojas : MonoBehaviour
     [Header("Objeto a desactivar")]
     public GameObject objetoADesactivar;  // El objeto que quieres desactivar cuando se detecte el trigger
     public GameObject ActivarTexto; // El objeto que contiene el texto (TextMeshPro o cualquier otro)
-
+    public GameObject consejo;
     // Tiempo que el texto se mantendrá activo antes de desactivarse
-    
+
     void OnTriggerEnter(Collider other)
     {
         // Verificamos si el objeto que entró tiene el tag "Hojas"
@@ -25,6 +25,7 @@ public class Hojas : MonoBehaviour
             if (objetoADesactivar != null)
             {
                 objetoADesactivar.SetActive(false); // Desactivamos el objeto asignado
+                consejo.SetActive(false);
             }
 
             // Activamos el texto
