@@ -19,6 +19,8 @@ public class ControladorVoz : MonoBehaviour
     public GameObject LuzGarrafon;
     public GameObject LuzTeclado;
 
+    public GameObject TextoCopias;
+
 
     private KeywordRecognizer keyWordRecognizer;
     private Dictionary<string, Action> wordToAction;
@@ -195,6 +197,7 @@ public class ControladorVoz : MonoBehaviour
     private void Garrafon()
     {
         LuzGarrafon.SetActive(true);
+        TextoCopias.SetActive(false);
     }
 
     private void Teclado() 

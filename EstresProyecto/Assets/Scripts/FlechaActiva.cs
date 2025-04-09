@@ -10,7 +10,7 @@ public class FlechaActiva : MonoBehaviour
 
     public GameObject Objetivo;
     
-
+    public GameObject Tip;
 
     private XRGrabInteractable grabInteractable;
 
@@ -39,7 +39,7 @@ public class FlechaActiva : MonoBehaviour
         if (objetoAparece != null)
         {
             objetoAparece.SetActive(true); // Lo activamos al agarrar
-            
+            Tip.SetActive(true);
         }
 
         if (Objetivo != null)

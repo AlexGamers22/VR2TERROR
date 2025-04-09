@@ -5,6 +5,7 @@ using UnityEngine;
 public class Misiones: MonoBehaviour
 {
     public ControladorVoz npc;
+    public GameObject TextoGarrafon;
     
 
     private void OnTriggerEnter(Collider other)
@@ -18,6 +19,7 @@ public class Misiones: MonoBehaviour
         }
         else if (other.CompareTag("Garrafon") && npc.MisionActual == 1)
         {
+            TextoGarrafon.SetActive(true);
             Debug.Log("Garrafon ponido");
             npc.CompletarMision();
         }
