@@ -11,8 +11,10 @@ public class ControladorVoz : MonoBehaviour
     public AudioSource audioSource;
 
     public AudioClip[] saludosClips;
-    public AudioClip ayudaClip;
+    public AudioClip[] ayudaClip;
     public AudioClip[] trabajoClips;
+    public AudioClip QuequieresClip;
+
 
     private KeywordRecognizer keyWordRecognizer;
     private Dictionary<string, Action> wordToAction;
@@ -27,9 +29,11 @@ public class ControladorVoz : MonoBehaviour
         {
             { "hola", Hola },
             { "que hay", Hola },
+            { "hey", Hola },
             { "¿qué hago?", Trabajo },
             { "¿qué trabajo hago?", Trabajo },
             { "¿qué más hago?", Trabajo },
+            { "¿que sigue?", Trabajo },
             { "ayuda", Ayuda },
             { "ayudame", Ayuda }
         };
@@ -41,14 +45,14 @@ public class ControladorVoz : MonoBehaviour
     private void WordRecognized(PhraseRecognizedEventArgs word)
     {
         string palabraReconocida = word.text.ToLower();
-        Debug.Log("Reconocido: " + palabraReconocida);
+        Debug.Log("Que: " + palabraReconocida);
         if (wordToAction.ContainsKey(palabraReconocida))
         {
             wordToAction[palabraReconocida].Invoke();
         }
         else
         {
-            Debug.LogWarning("Palabra no encontrada en el diccionario.");
+            Debug.LogWarning("No entendi");
         }
     }
 
@@ -56,9 +60,9 @@ public class ControladorVoz : MonoBehaviour
     {
         string[] saludos =
         {
-            "Hola soy Miguelon y soy tu jefe.",
             "Hey ¿listo para trabajar?",
-            "Hola ponte a trabajar"
+            "Hola ponte a trabajar, YAAA",
+            "Hey no estés perdiendo el tiempo y ponte a trabajar"
         };
 
         int index = random.Next(saludos.Length);
@@ -72,8 +76,17 @@ public class ControladorVoz : MonoBehaviour
 
     private void Ayuda()
     {
-        textoPersonaje.text = "¿Qué necesitas?";
-        ReproducirAudio(ayudaClip);
+        string[] ayudas =
+        {
+            "No te voy ayudar siempre, INUTIL",
+            "No me estes molestando y PONTE A TRABAJAR"
+        };
+         int index = random.Next(ayudas.Length);
+        textoPersonaje.text = ayudas[index];
+        if (ayudaClip.Length > index)
+        {
+            ReproducirAudio(ayudaClip[index]);
+        }
     }
 
     private void Trabajo()
@@ -82,16 +95,16 @@ public class ControladorVoz : MonoBehaviour
         switch (misionActual)
         {
             case 0:
-                textoPersonaje.text = "Tu primera tarea es sacar copias.";
+                textoPersonaje.text = "Necesito que saques copias y no lo eches a perder";
                 break;
             case 1:
-                textoPersonaje.text = "Cambia el garrafón de agua RAPIDO.";
+                textoPersonaje.text = "Cambia el garrafón RAPIDO, no ves que ya no hay agua";
                 break;
             case 2:
-                textoPersonaje.text = "Ve a ver qué tiene la maldita COMPUTADORA.";
+                textoPersonaje.text = "Le falta el teclado a mi computadora , VE POR UNO RAPIDO";
                 break;
             default:
-                textoPersonaje.text = "Ya terminaste por hoy, pero realizarás horas extras.";
+                textoPersonaje.text = "Hoy realizaras horas extras PORQUE YO LO DIGO";
                 index = 3;
                 break;
         }
@@ -127,12 +140,14 @@ public class ControladorVoz : MonoBehaviour
         {
             if (!keyWordRecognizer.IsRunning)
             {
-                Debug.Log("Activando escucha");
+                Debug.Log("Escucha");
                 keyWordRecognizer.Start();
-                textoPersonaje.text = "Te escucho.";
+                textoPersonaje.text = "¿Qué quieres?";
+                ReproducirAudio(QuequieresClip);
             }
         }
     }
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -140,7 +155,7 @@ public class ControladorVoz : MonoBehaviour
         {
             if (keyWordRecognizer.IsRunning)
             {
-                Debug.Log("Deteniendo escucha");
+                Debug.Log("No escucha");
                 keyWordRecognizer.Stop();
                 textoPersonaje.text = "";
             }
