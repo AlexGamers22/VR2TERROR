@@ -19,7 +19,7 @@ public class Misiones: MonoBehaviour
         }
         else if (other.CompareTag("Garrafon") && npc.MisionActual == 1)
         {
-            TextoGarrafon.SetActive(true);
+            TextoGarrafon.SetActive(true    );
             Debug.Log("Garrafon ponido");
             npc.CompletarMision();
         }

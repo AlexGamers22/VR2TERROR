@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class ControladorVoz : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class ControladorVoz : MonoBehaviour
     public GameObject LuzTeclado;
 
     public GameObject TextoCopias;
+
 
 
     private KeywordRecognizer keyWordRecognizer;
@@ -116,6 +119,7 @@ public class ControladorVoz : MonoBehaviour
             default:
                 textoPersonaje.text = "Hoy realizaras horas extras PORQUE YO LO DIGO";
                 index = 3;
+                StartCoroutine(CambiarEscenaConDelay());
                 break;
         }
 
@@ -203,5 +207,11 @@ public class ControladorVoz : MonoBehaviour
     private void Teclado() 
     {
         LuzTeclado.SetActive(true);
+    }
+
+    IEnumerator CambiarEscenaConDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("MiOtraEscena");
     }
 }
