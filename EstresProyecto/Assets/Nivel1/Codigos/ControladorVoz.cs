@@ -168,4 +168,12 @@ public class ControladorVoz : MonoBehaviour
             keyWordRecognizer.Dispose();
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ReproducirAudio(QuequieresClip);
+        }
+    }
 }
