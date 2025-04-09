@@ -212,6 +212,6 @@ public class ControladorVoz : MonoBehaviour
     IEnumerator CambiarEscenaConDelay()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("MiOtraEscena");
+        SceneManager.LoadScene("Menu");
     }
 }
