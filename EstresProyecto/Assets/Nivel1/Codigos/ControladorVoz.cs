@@ -32,7 +32,7 @@ public class ControladorVoz : MonoBehaviour
             { "hey", Hola },
 
             { "ayuda", Ayuda },
-            { "Necesito ayuda", Ayuda },
+            { "necesito ayuda", Ayuda },
             { "ayudame", Ayuda }
         };
 
