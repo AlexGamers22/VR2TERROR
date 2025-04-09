@@ -33,8 +33,10 @@ public class ControladorVoz : MonoBehaviour
             { "¿qué hago?", Trabajo },
             { "¿qué trabajo hago?", Trabajo },
             { "¿qué más hago?", Trabajo },
+            { "¿qué necesita?", Trabajo },
             { "¿que sigue?", Trabajo },
             { "ayuda", Ayuda },
+            { "Necesito ayuda", Ayuda },
             { "ayudame", Ayuda }
         };
 
