@@ -15,6 +15,10 @@ public class ControladorVoz : MonoBehaviour
     public AudioClip[] trabajoClips;
     public AudioClip QuequieresClip;
 
+    public GameObject LuzCopias;
+    public GameObject LuzGarrafon;
+    public GameObject LuzTeclado;
+
 
     private KeywordRecognizer keyWordRecognizer;
     private Dictionary<string, Action> wordToAction;
@@ -97,12 +101,15 @@ public class ControladorVoz : MonoBehaviour
         {
             case 0:
                 textoPersonaje.text = "Necesito que saques copias y no lo eches a perder";
+                Copias();
                 break;
             case 1:
                 textoPersonaje.text = "Cambia el garrafón RAPIDO, no ves que ya no hay agua";
+                Garrafon();
                 break;
             case 2:
                 textoPersonaje.text = "Le falta el teclado a mi computadora , VE POR UNO RAPIDO";
+                Teclado();
                 break;
             default:
                 textoPersonaje.text = "Hoy realizaras horas extras PORQUE YO LO DIGO";
@@ -178,5 +185,20 @@ public class ControladorVoz : MonoBehaviour
         {
             ReproducirAudio(QuequieresClip);
         }
+    }
+
+    private void Copias()
+    {
+        LuzCopias.SetActive(true);
+    }
+
+    private void Garrafon()
+    {
+        LuzGarrafon.SetActive(true);
+    }
+
+    private void Teclado() 
+    {
+        LuzTeclado.SetActive(true);
     }
 }

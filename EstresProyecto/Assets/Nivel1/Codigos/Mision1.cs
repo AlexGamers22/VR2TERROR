@@ -5,6 +5,7 @@ using UnityEngine;
 public class Misiones: MonoBehaviour
 {
     public ControladorVoz npc;
+    
 
     private void OnTriggerEnter(Collider other)
     {

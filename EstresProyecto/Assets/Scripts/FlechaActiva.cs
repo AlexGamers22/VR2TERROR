@@ -5,8 +5,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class FlechaActiva : MonoBehaviour
 {
-     [Header("Objeto que debe aparecer")]
+    [Header("Objeto que debe aparecer")]
     public GameObject objetoAparece;
+
+    public GameObject Objetivo;
+    
+
 
     private XRGrabInteractable grabInteractable;
 
@@ -23,6 +27,11 @@ public class FlechaActiva : MonoBehaviour
         {
             objetoAparece.SetActive(false); // Lo ocultamos al inicio
         }
+
+        if (Objetivo != null)
+        {
+            Objetivo.SetActive(false); // Lo ocultamos al inicio
+        }
     }
 
     void OnSelectEntered(SelectEnterEventArgs args)
@@ -30,6 +39,12 @@ public class FlechaActiva : MonoBehaviour
         if (objetoAparece != null)
         {
             objetoAparece.SetActive(true); // Lo activamos al agarrar
+            
+        }
+
+        if (Objetivo != null)
+        {
+            Objetivo.SetActive(true); // Lo ocultamos al inicio
         }
     }
 
@@ -41,5 +56,6 @@ public class FlechaActiva : MonoBehaviour
             grabInteractable.selectEntered.RemoveListener(OnSelectEntered);
         }
     }
+
     
 }
