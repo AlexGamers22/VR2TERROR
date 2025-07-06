@@ -21,6 +21,7 @@ public class CambioCamara : MonoBehaviour
 
         // Desactiva el primer objeto y activa el segundo.
         objetoADesactivar.SetActive(false);
+        Destroy(objetoADesactivar );
         objetoAActivar.SetActive(true);
     }
 
