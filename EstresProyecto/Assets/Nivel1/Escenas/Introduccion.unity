@@ -18371,17 +18371,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 195159842}
     - target: {fileID: 544025210648176736, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 544025210648176736, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
       propertyPath: m_SecondaryAttachTransform
       value: 
       objectReference: {fileID: 1335670716}
-    - target: {fileID: 544025210648176736, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4721714235286140405, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.591053
@@ -27111,7 +27103,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!33 &1975330406481650844
 MeshFilter:

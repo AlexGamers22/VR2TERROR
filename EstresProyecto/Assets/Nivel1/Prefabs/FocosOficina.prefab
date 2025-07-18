@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6376922044957197112}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.60774994, y: 0.3499375, z: -0.3557123, w: 0.6177803}
+  m_LocalRotation: {x: 0.607749, y: 0.34993744, z: -0.35571307, w: 0.61778086}
   m_LocalPosition: {x: 10.284259, y: 2.562732, z: -9.629169}
   m_LocalScale: {x: 2.891592, y: 2.8915923, z: 2.8915918}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0.471, y: 179.189, z: 60.264}
+  m_LocalEulerAnglesHint: {x: 90.93799, y: 180.003, z: 120.137}
 --- !u!33 &4046078516313545478
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6376922044957197112}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -93,22 +93,22 @@ Light:
   m_GameObject: {fileID: 6376922044957197112}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 0
+  m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.99031776, b: 0.8160377, a: 1}
-  m_Intensity: 31.17
-  m_Range: 3.34
-  m_SpotAngle: 84
+  m_Intensity: 2.06
+  m_Range: 4
+  m_SpotAngle: 83
   m_InnerSpotAngle: 7.834051
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0
-    m_Bias: 0.78
-    m_NormalBias: 0.57
-    m_NearPlane: 3.94
+    m_Strength: 0.289
+    m_Bias: 0.71
+    m_NormalBias: 0.78
+    m_NearPlane: 7.45
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
