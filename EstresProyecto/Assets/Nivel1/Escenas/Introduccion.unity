@@ -29298,8 +29298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bc72d2ecc8add47b2fe00d40318500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LeftHand: {fileID: 0}
-  m_RightHand: {fileID: 0}
+  m_LeftHand: {fileID: 919132149155446097, guid: bf7151579c38e2a44be94ba8773876c1, type: 3}
+  m_RightHand: {fileID: 919132149155446097, guid: 56186ccf27ad7864681108ed88349071, type: 3}
   m_LeftController: {fileID: 2119128821997336139, guid: ffd656bf2a3ba3d41b1e4a94b81b7c85, type: 3}
   m_RightController: {fileID: 2746493918707896725, guid: 89e80c47615e4f043926d66492d3ca5f, type: 3}
   m_TrackedHandModeStarted:
@@ -33819,7 +33819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &6472295624011686096
 GameObject:
   m_ObjectHideFlags: 0
@@ -36968,6 +36968,8 @@ MonoBehaviour:
   - groupMember: {fileID: 4710497674644794254}
     overrideGroupMembers:
     - {fileID: 6688015754956549900}
+  - groupMember: {fileID: 9146015504682833194}
+    overrideGroupMembers: []
 --- !u!33 &8091949965899404719
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -38004,7 +38006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &8697300782537430893
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38605,7 +38607,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 607147895840967966, guid: 3e01b870404f1c746ba5ec256721a687, type: 3}
+  m_ModelPrefab: {fileID: -8679921383154817045, guid: e4b28a29ea66036478925992f4dc62e2, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -38889,7 +38891,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 6196543654772219090, guid: bf3f63a4b41d63145902cc1cad8b0495, type: 3}
+  m_ModelPrefab: {fileID: -8679921383154817045, guid: e4b28a29ea66036478925992f4dc62e2, type: 3}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
