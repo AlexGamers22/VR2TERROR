@@ -1,12 +1,12 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Misiones: MonoBehaviour
+public class Misiones : MonoBehaviour
 {
     public ControladorVoz npc;
     public GameObject TextoGarrafon;
-    
+    public ContadorTiempo contador;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,18 +16,19 @@ public class Misiones: MonoBehaviour
         {
             Debug.Log("Hojas listas");
             npc.CompletarMision();
+            contador.RegistrarTiempo();
         }
         else if (other.CompareTag("Garrafon") && npc.MisionActual == 1)
         {
-            TextoGarrafon.SetActive(true    );
-            Debug.Log("Garrafon ponido");
+            Debug.Log("Garrafon cambiado");
             npc.CompletarMision();
+            contador.RegistrarTiempo();
         }
         else if (other.CompareTag("Teclado") && npc.MisionActual == 2)
         {
             Debug.Log("Teclado ya");
             npc.CompletarMision();
+            contador.RegistrarTiempo(); 
         }
     }
-
 }
