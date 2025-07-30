@@ -3610,7 +3610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 2119695524919536672}
-  TextoGarrafon: {fileID: 0}
+  TextoGarrafon: {fileID: 1119712081}
   contador: {fileID: 2050878469}
 --- !u!65 &221372707
 BoxCollider:
@@ -9549,7 +9549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &303819769
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37699,6 +37699,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 206663937}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1949267869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949267871}
+  - component: {fileID: 1949267870}
+  m_Layer: 0
+  m_Name: Cronometro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1949267870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949267869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1415ceb7b0d84b34c9eb4af011ae5a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiemposTareas: []
+  tiempoCapitulo2: 
+--- !u!4 &1949267871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949267869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.49426, y: 243.49199, z: -55.270874}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1955348443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38003,8 +38049,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 146.2, y: 144}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 146.2, y: 12.2896}
+  m_SizeDelta: {x: 200, y: 313.4208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1982156111
 MonoBehaviour:
@@ -38089,7 +38135,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -143.58575, w: 0}
+  m_margin: {x: -12.436707, y: -29.736511, z: -129.9314, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -44626,7 +44672,6 @@ GameObject:
   - component: {fileID: 6946098996355161810}
   - component: {fileID: 6946098996355161811}
   - component: {fileID: 6946098996355161812}
-  - component: {fileID: 6946098996355161813}
   m_Layer: 0
   m_Name: dispensadorAgua
   m_TagString: Untagged
@@ -47776,21 +47821,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetoObjetivo: {fileID: 1105803175}
---- !u!114 &6946098996355161813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4011352957133756028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f48161fbc8b57c428f69b6b57bd2b1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npc: {fileID: 2119695524919536672}
-  TextoGarrafon: {fileID: 1119712081}
-  contador: {fileID: 0}
 --- !u!4 &6998874355836283329
 Transform:
   m_ObjectHideFlags: 0
@@ -50286,3 +50316,4 @@ SceneRoots:
   - {fileID: 303819769}
   - {fileID: 945323698}
   - {fileID: 2050878470}
+  - {fileID: 1949267871}

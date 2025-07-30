@@ -11634,7 +11634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoTareas: {fileID: 1249721905}
   textoCapitulo: {fileID: 818739791}
-  textoNivel1: {fileID: 0}
+
 --- !u!222 &4422659090289097497
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11774,7 +11774,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
