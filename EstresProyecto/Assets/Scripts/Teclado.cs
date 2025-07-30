@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // Importante para cambiar de escena
 
 public class Teclado : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Teclado : MonoBehaviour
     public GameObject TecladoTexto;
     void OnTriggerEnter(Collider other)
     {
-        // Verificamos si el objeto que entró tiene el tag "Hojas"
+        // Verificamos si el objeto que entró tiene el tag "Teclado"
         if (other.CompareTag("Teclado"))
         {
             // Desactivamos el objeto que tiene este script
@@ -21,6 +22,9 @@ public class Teclado : MonoBehaviour
                 objetoADesactivar.SetActive(false); // Desactivamos el objeto asignado
                 TecladoTexto.SetActive(false);
             }
+
+            // Cambiamos de escena a "Creditos"
+            SceneManager.LoadScene("Creditos");
         }
     }
 }
