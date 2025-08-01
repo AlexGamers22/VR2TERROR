@@ -19,6 +19,7 @@ public class Elevador : MonoBehaviour
     public string animacionDespuesDeMover;
 
     public GameObject ActivadorLuz;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -76,7 +77,10 @@ public class Elevador : MonoBehaviour
             {
                 ActivadorLuz.gameObject.SetActive(true);
                 animadorDespuesDeMover.Play(animacionDespuesDeMover);
+
             }
+
+            
         }
     }
 }
