@@ -9,6 +9,10 @@ public class CamaraPC : MonoBehaviour
     public PlayableDirector timelineDirector; // Asigna el PlayableDirector (Timeline) desde el Inspector
 
     private XRGrabInteractable grabInteractable;
+    public GameObject Funcion1;
+    public GameObject Funcion2;
+    public GameObject Funcion3;
+
 
     void Awake()
     {
@@ -37,4 +41,7 @@ public class CamaraPC : MonoBehaviour
             grabInteractable.selectEntered.RemoveListener(OnGrabSilla);
         }
     }
+
+
+
 }
