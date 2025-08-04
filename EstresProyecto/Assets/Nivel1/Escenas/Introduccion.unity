@@ -36866,7 +36866,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 756003ef3092e4a41b4f1d64b09d032e, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -36885,8 +36885,6 @@ PlayableDirector:
     value: {fileID: 1345647194}
   - key: {fileID: -5449702201693016243, guid: 756003ef3092e4a41b4f1d64b09d032e, type: 2}
     value: {fileID: 259358554}
-  - key: {fileID: 112712264903392537, guid: 756003ef3092e4a41b4f1d64b09d032e, type: 2}
-    value: {fileID: 1465002792}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1699374191
@@ -46355,7 +46353,7 @@ Transform:
   m_GameObject: {fileID: 919132148176550849}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.6967118, z: 0, w: 0.71735126}
-  m_LocalPosition: {x: -12.561, y: 0.145, z: 6.885}
+  m_LocalPosition: {x: -12.561, y: -1.265, z: 6.885}
   m_LocalScale: {x: 0.65529, y: 0.65529, z: 0.65529}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67720,7 +67718,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2686b3859877b52458f90a9e753209c7, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
