@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class Reloj : MonoBehaviour
+public class Reloj1 : MonoBehaviour
 {
     [Header("Referencias")]
     [SerializeField] private GameObject canvasAActivar;
@@ -20,16 +20,13 @@ public class Reloj : MonoBehaviour
     private bool canvasActivo = false;
     private bool puedeCambiar = true;
     private bool notificacionActiva = false;
-    private bool relojAbiertoManual = false; 
+    private bool relojAbiertoManual = false;
     private Color colorOriginal;
     private Coroutine parpadeoCoroutine;
 
-    private void Start()
-    {
-        activarReloj();
-    }
+    // Ya no se llama automáticamente
+    // private void Start() => activarReloj();
 
- 
     public void activarReloj()
     {
         if (relojRenderer != null)
@@ -40,8 +37,6 @@ public class Reloj : MonoBehaviour
 
         StartCoroutine(NotificarYMostrarReloj());
     }
-
-
 
     private IEnumerator NotificarYMostrarReloj()
     {
@@ -64,9 +59,7 @@ public class Reloj : MonoBehaviour
         yield return new WaitForSeconds(tiempoActivarReloj);
 
         if (!relojAbiertoManual)
-        {
             MostrarCanvas(true);
-        }
 
         if (parpadeoCoroutine != null && relojRenderer != null)
         {
@@ -110,17 +103,23 @@ public class Reloj : MonoBehaviour
             if (canvasActivo)
             {
                 if (notificacionActiva)
+                {
                     relojAbiertoManual = true;
 
-                if (parpadeoCoroutine != null && relojRenderer != null)
-                {
-                    StopCoroutine(parpadeoCoroutine);
-                    relojRenderer.color = colorOriginal;
-                }
+                    if (objetoExtra != null)
+                        objetoExtra.SetActive(true);
 
-                if (notificacionActiva && audioNotificacion != null)
-                {
-                    audioNotificacion.Stop();
+                    if (parpadeoCoroutine != null && relojRenderer != null)
+                    {
+                        StopCoroutine(parpadeoCoroutine);
+                        relojRenderer.color = colorOriginal;
+                    }
+
+                    if (audioNotificacion != null)
+                    {
+                        audioNotificacion.Stop();
+                    }
+
                     notificacionActiva = false;
                 }
             }

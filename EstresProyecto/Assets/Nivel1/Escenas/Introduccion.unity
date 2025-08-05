@@ -14433,6 +14433,7 @@ GameObject:
   - component: {fileID: 628581456}
   - component: {fileID: 628581455}
   - component: {fileID: 628581454}
+  - component: {fileID: 628581459}
   m_Layer: 0
   m_Name: Activador
   m_TagString: Untagged
@@ -14463,6 +14464,9 @@ MonoBehaviour:
   - {fileID: 1665617865}
   objetosActivar:
   - {fileID: 1042077022}
+  textoMostrar: {fileID: 2009950261}
+  mensaje: VUELVE A TU LUGAR
+  scriptReloj: {fileID: 628581459}
 --- !u!65 &628581455
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14549,6 +14553,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &628581459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628581453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757f99dc0c203904faa7d724cd96700f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasAActivar: {fileID: 2005133635}
+  mensajeNotificacion: {fileID: 2005133635}
+  objetoExtra: {fileID: 1269228556}
+  audioNotificacion: {fileID: 362986122}
+  relojRenderer: {fileID: 2100000, guid: 7e93d33c163fecb46be331c4e2dd6884, type: 2}
+  texto: {fileID: 2009950261}
+  parpadeoVelocidad: 0.5
+  activarNotificacionEscena: 5
+  tiempoActivarReloj: 5
 --- !u!1 &630234141
 GameObject:
   m_ObjectHideFlags: 0
@@ -19137,6 +19162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1056614980}
   - component: {fileID: 1056614979}
+  - component: {fileID: 1056614983}
   - component: {fileID: 1056614982}
   - component: {fileID: 1056614981}
   m_Layer: 0
@@ -19204,10 +19230,10 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1056614982}
-          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-          m_MethodName: set_enabled
-          m_Mode: 6
+        - m_Target: {fileID: 1056614983}
+          m_TargetAssemblyTypeName: Reloj1, Assembly-CSharp
+          m_MethodName: activarReloj
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -19233,10 +19259,31 @@ MonoBehaviour:
   objetoExtra: {fileID: 1269228556}
   audioNotificacion: {fileID: 362986122}
   relojRenderer: {fileID: 2100000, guid: 7e93d33c163fecb46be331c4e2dd6884, type: 2}
-  Parpadeo: 0.5
-  ActivarNotificacionEscena: 5
-  tiempoActivarreloj: 15
-  texto: {fileID: 0}
+  texto: {fileID: 2009950261}
+  parpadeoVelocidad: 0.5
+  activarNotificacionEscena: 5
+  tiempoActivarReloj: 15
+--- !u!114 &1056614983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056614978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757f99dc0c203904faa7d724cd96700f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasAActivar: {fileID: 2005133635}
+  mensajeNotificacion: {fileID: 2005133635}
+  objetoExtra: {fileID: 1269228556}
+  audioNotificacion: {fileID: 362986122}
+  relojRenderer: {fileID: 2100000, guid: 7e93d33c163fecb46be331c4e2dd6884, type: 2}
+  texto: {fileID: 2009950261}
+  parpadeoVelocidad: 0.5
+  activarNotificacionEscena: 20
+  tiempoActivarReloj: 8
 --- !u!1 &1063350692
 GameObject:
   m_ObjectHideFlags: 0
@@ -24787,7 +24834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &1699374190
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -27285,10 +27332,10 @@ MonoBehaviour:
   objetoExtra: {fileID: 1269228556}
   audioNotificacion: {fileID: 362986122}
   relojRenderer: {fileID: 2100000, guid: 7e93d33c163fecb46be331c4e2dd6884, type: 2}
-  Parpadeo: 0.5
-  ActivarNotificacionEscena: 5
-  tiempoActivarreloj: 15
   texto: {fileID: 2009950261}
+  parpadeoVelocidad: 0.5
+  activarNotificacionEscena: 5
+  tiempoActivarReloj: 15
 --- !u!54 &1985862320
 Rigidbody:
   m_ObjectHideFlags: 0
