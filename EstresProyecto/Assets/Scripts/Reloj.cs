@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Reloj : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Reloj : MonoBehaviour
     public float Parpadeo = 0.5f;
     public float ActivarNotificacionEscena = 5f;
     public float tiempoActivarreloj = 15f;
+    public TextMeshProUGUI texto;
 
     private bool canvasActivo = false;
     private bool puedeCambiar = true;
@@ -29,6 +31,14 @@ public class Reloj : MonoBehaviour
 
         StartCoroutine(NotificarYMostrarReloj());
     }
+   
+
+        public void CambiarTexto(string nuevoTexto)
+        {
+          texto.text = nuevoTexto;
+       }
+    
+    
 
     private IEnumerator NotificarYMostrarReloj()
     {

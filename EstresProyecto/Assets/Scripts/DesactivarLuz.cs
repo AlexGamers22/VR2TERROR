@@ -31,4 +31,5 @@ public class DesactivarLuz : MonoBehaviour
             // gameObject.SetActive(false);
         }
     }
+
 }
