@@ -3263,7 +3263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &756719279
 Transform:
   m_ObjectHideFlags: 0
@@ -7372,7 +7372,7 @@ MonoBehaviour:
     Yafte Ram\xEDrez Alvarado\n\nModelado 3D\nGabriel Yafte Ram\xEDrez Alvarado\nEmmanuel
     Mondrag\xF3n Jasso\nChristian Fernando Barr\xF3n L\xF3pez\n\nComposici\xF3n musical\nMiguel
     \xC1ngel Rodr\xEDguez Frausto\n\nMarketing\nChristian Fernando Barr\xF3n L\xF3pez\n\nVoces\nJefe
-    \u2013 Diego\nSof\xEDa \u2013 Mierdeli\n\nPatrocinadores\nSa\xFAl Olmedo Garc\xEDa\n\nHerramientas
+    \u2013 Diego\nSof\xEDa \u2013 Arely\n\nPatrocinadores\nSa\xFAl Olmedo Garc\xEDa\n\nHerramientas
     utilizadas\nUnity \nBlender\n\nAssets\nAssets de Unity Store\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

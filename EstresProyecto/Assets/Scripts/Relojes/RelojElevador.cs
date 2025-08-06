@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class Reloj1 : MonoBehaviour
+public class RelojElevador : MonoBehaviour
 {
     [Header("Referencias")]
     [SerializeField] private GameObject canvasAActivar;
@@ -20,13 +20,16 @@ public class Reloj1 : MonoBehaviour
     private bool canvasActivo = false;
     private bool puedeCambiar = true;
     private bool notificacionActiva = false;
-    private bool relojAbiertoManual = false;
+    private bool relojAbiertoManual = false; 
     private Color colorOriginal;
     private Coroutine parpadeoCoroutine;
 
-    // Ya no se llama automáticamente
-    // private void Start() => activarReloj();
+    private void Start()
+    {
+        activarReloj();
+    }
 
+ 
     public void activarReloj()
     {
         if (relojRenderer != null)
@@ -38,12 +41,11 @@ public class Reloj1 : MonoBehaviour
         StartCoroutine(NotificarYMostrarReloj());
     }
 
+
+
     private IEnumerator NotificarYMostrarReloj()
     {
         yield return new WaitForSeconds(activarNotificacionEscena);
-
-        while (canvasAActivar != null && canvasAActivar.activeSelf)
-            yield return null;
 
         notificacionActiva = true;
 
@@ -61,18 +63,23 @@ public class Reloj1 : MonoBehaviour
         if (!relojAbiertoManual)
             MostrarCanvas(true);
 
-        if (parpadeoCoroutine != null && relojRenderer != null)
-        {
-            StopCoroutine(parpadeoCoroutine);
-            relojRenderer.color = colorOriginal;
-        }
+        StopCoroutine(parpadeoCoroutine); 
+        relojRenderer.color = colorOriginal; 
 
-        if (audioNotificacion != null && notificacionActiva)
-        {
-            audioNotificacion.Stop();
-            notificacionActiva = false;
-        }
+        if (audioNotificacion != null)
+            audioNotificacion.Stop(); 
+
+        yield return new WaitForSeconds(5f);
+
+        if (objetoExtra != null)
+            objetoExtra.SetActive(false);
+
+        if (canvasAActivar != null)
+            canvasAActivar.SetActive(false);
+
+        
     }
+
 
     private void MostrarCanvas(bool estado)
     {
@@ -103,23 +110,17 @@ public class Reloj1 : MonoBehaviour
             if (canvasActivo)
             {
                 if (notificacionActiva)
-                {
                     relojAbiertoManual = true;
 
-                    if (objetoExtra != null)
-                        objetoExtra.SetActive(true);
+                if (parpadeoCoroutine != null && relojRenderer != null)
+                {
+                    StopCoroutine(parpadeoCoroutine);
+                    relojRenderer.color = Color.black;
+                }
 
-                    if (parpadeoCoroutine != null && relojRenderer != null)
-                    {
-                        StopCoroutine(parpadeoCoroutine);
-                        relojRenderer.color = colorOriginal;
-                    }
-
-                    if (audioNotificacion != null)
-                    {
-                        audioNotificacion.Stop();
-                    }
-
+                if (notificacionActiva && audioNotificacion != null)
+                {
+                    audioNotificacion.Stop();
                     notificacionActiva = false;
                 }
             }

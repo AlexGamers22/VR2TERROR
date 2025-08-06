@@ -13,7 +13,7 @@ public class DesactivarLuz : MonoBehaviour
     [SerializeField] private string mensaje;
 
     [Header("Script del reloj desactivado")]
-    [SerializeField] private Reloj1 scriptReloj; // Cambiado a tipo Reloj
+    [SerializeField] private Reloj scriptReloj; // Cambiado a tipo Reloj
 
     private void OnTriggerEnter(Collider other)
     {
