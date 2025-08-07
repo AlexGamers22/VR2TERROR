@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class CronometroNivel1 : MonoBehaviour
 {
@@ -29,7 +28,6 @@ public class CronometroNivel1 : MonoBehaviour
             int minutos = Mathf.FloorToInt(tiempo / 60f);
             int segundos = Mathf.FloorToInt(tiempo % 60f);
             TiempoManager.Instancia.tiempoNivel1 = string.Format("{0:00}:{1:00}", minutos, segundos);
-            Debug.Log("Tiempo Nivel 1 guardado: " + TiempoManager.Instancia.tiempoNivel1);
         }
     }
 }

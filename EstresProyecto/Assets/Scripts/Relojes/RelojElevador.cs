@@ -16,6 +16,7 @@ public class RelojElevador : MonoBehaviour
     [SerializeField] private float parpadeoVelocidad = 0.5f;
     [SerializeField] private float activarNotificacionEscena = 5f;
     [SerializeField] private float tiempoActivarReloj = 15f;
+    [SerializeField] public float tiempoCerrarAutomatico = 15f;
 
     private bool canvasActivo = false;
     private bool puedeCambiar = true;
@@ -23,13 +24,13 @@ public class RelojElevador : MonoBehaviour
     private bool relojAbiertoManual = false; 
     private Color colorOriginal;
     private Coroutine parpadeoCoroutine;
+    private Coroutine cerrarRelojCoroutine;
 
     private void Start()
     {
         activarReloj();
     }
 
- 
     public void activarReloj()
     {
         if (relojRenderer != null)
@@ -40,8 +41,6 @@ public class RelojElevador : MonoBehaviour
 
         StartCoroutine(NotificarYMostrarReloj());
     }
-
-
 
     private IEnumerator NotificarYMostrarReloj()
     {
@@ -63,23 +62,17 @@ public class RelojElevador : MonoBehaviour
         if (!relojAbiertoManual)
             MostrarCanvas(true);
 
-        StopCoroutine(parpadeoCoroutine); 
-        relojRenderer.color = colorOriginal; 
+        if (parpadeoCoroutine != null && relojRenderer != null)
+        {
+            StopCoroutine(parpadeoCoroutine);
+            relojRenderer.color = colorOriginal;
+        }
 
         if (audioNotificacion != null)
-            audioNotificacion.Stop(); 
+            audioNotificacion.Stop();
 
-        yield return new WaitForSeconds(5f);
-
-        if (objetoExtra != null)
-            objetoExtra.SetActive(false);
-
-        if (canvasAActivar != null)
-            canvasAActivar.SetActive(false);
-
-        
+        notificacionActiva = false;
     }
-
 
     private void MostrarCanvas(bool estado)
     {
@@ -87,6 +80,21 @@ public class RelojElevador : MonoBehaviour
         if (canvasAActivar != null) canvasAActivar.SetActive(estado);
         if (mensajeNotificacion != null) mensajeNotificacion.SetActive(estado);
         if (objetoExtra != null) objetoExtra.SetActive(estado && notificacionActiva);
+                       
+        if (estado)
+        {
+            if (cerrarRelojCoroutine != null)
+                StopCoroutine(cerrarRelojCoroutine);
+            cerrarRelojCoroutine = StartCoroutine(CerrarRelojAutomatico());
+        }
+        else
+        {
+            if (cerrarRelojCoroutine != null)
+            {
+                StopCoroutine(cerrarRelojCoroutine);
+                cerrarRelojCoroutine = null;
+            }
+        }
     }
 
     private IEnumerator ParpadearMaterial()
@@ -97,6 +105,15 @@ public class RelojElevador : MonoBehaviour
             relojRenderer.color = blanco ? Color.white : colorOriginal;
             blanco = !blanco;
             yield return new WaitForSeconds(parpadeoVelocidad);
+        }
+    }
+
+    private IEnumerator CerrarRelojAutomatico()
+    {
+        yield return new WaitForSeconds(tiempoCerrarAutomatico);
+        if (canvasActivo)
+        {
+            MostrarCanvas(false);
         }
     }
 

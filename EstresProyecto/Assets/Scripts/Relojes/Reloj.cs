@@ -16,6 +16,7 @@ public class Reloj : MonoBehaviour
     [SerializeField] private float parpadeoVelocidad = 0.5f;
     [SerializeField] private float activarNotificacionEscena = 5f;
     [SerializeField] private float tiempoActivarReloj = 15f;
+    [SerializeField] private float tiempoCerrarAutomatico = 10f;
 
     private bool canvasActivo = false;
     private bool puedeCambiar = true;
@@ -23,13 +24,13 @@ public class Reloj : MonoBehaviour
     private bool relojAbiertoManual = false; 
     private Color colorOriginal;
     private Coroutine parpadeoCoroutine;
+    private Coroutine cerrarRelojCoroutine;
 
     private void Start()
     {
         activarReloj();
     }
 
- 
     public void activarReloj()
     {
         if (relojRenderer != null)
@@ -40,8 +41,6 @@ public class Reloj : MonoBehaviour
 
         StartCoroutine(NotificarYMostrarReloj());
     }
-
-
 
     private IEnumerator NotificarYMostrarReloj()
     {
@@ -87,6 +86,21 @@ public class Reloj : MonoBehaviour
         if (canvasAActivar != null) canvasAActivar.SetActive(estado);
         if (mensajeNotificacion != null) mensajeNotificacion.SetActive(estado);
         if (objetoExtra != null) objetoExtra.SetActive(estado && notificacionActiva);
+
+        if (estado)
+        {
+            if (cerrarRelojCoroutine != null)
+                StopCoroutine(cerrarRelojCoroutine);
+            cerrarRelojCoroutine = StartCoroutine(CerrarRelojAutomatico());
+        }
+        else
+        {
+            if (cerrarRelojCoroutine != null)
+            {
+                StopCoroutine(cerrarRelojCoroutine);
+                cerrarRelojCoroutine = null;
+            }
+        }
     }
 
     private IEnumerator ParpadearMaterial()
@@ -97,6 +111,15 @@ public class Reloj : MonoBehaviour
             relojRenderer.color = blanco ? Color.white : colorOriginal;
             blanco = !blanco;
             yield return new WaitForSeconds(parpadeoVelocidad);
+        }
+    }
+
+    private IEnumerator CerrarRelojAutomatico()
+    {
+        yield return new WaitForSeconds(tiempoCerrarAutomatico);
+        if (canvasActivo)
+        {
+            MostrarCanvas(false);
         }
     }
 
