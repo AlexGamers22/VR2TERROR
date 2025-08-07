@@ -12,6 +12,7 @@ public class CamaraPC : MonoBehaviour
     public GameObject Funcion1;
     public GameObject Funcion2;
     public GameObject Funcion3;
+    public PlayableDirector ElevadorOpen;
 
 
     void Awake()
@@ -27,6 +28,9 @@ public class CamaraPC : MonoBehaviour
     {
         if (timelineDirector != null)
         {
+            Funcion1.SetActive(false);
+            Funcion2.SetActive(false);
+            Funcion3.SetActive(false);
             timelineDirector.Play();
         }
 
@@ -39,6 +43,18 @@ public class CamaraPC : MonoBehaviour
         if (grabInteractable != null)
         {
             grabInteractable.selectEntered.RemoveListener(OnGrabSilla);
+        }
+    }
+
+    IEnumerator EsperarYMoverYRotarYAnimarConDelay()
+    {
+        yield return new WaitForSeconds(15f);
+
+        if (ElevadorOpen != null)
+        {
+            
+
+
         }
     }
 
