@@ -32,6 +32,8 @@ public class CamaraPC : MonoBehaviour
             Funcion2.SetActive(false);
             Funcion3.SetActive(false);
             timelineDirector.Play();
+
+            StartCoroutine(AbriElevador());
         }
 
         // Si quieres que el jugador ya no pueda soltar la silla:
@@ -45,19 +47,10 @@ public class CamaraPC : MonoBehaviour
             grabInteractable.selectEntered.RemoveListener(OnGrabSilla);
         }
     }
-
-    IEnumerator EsperarYMoverYRotarYAnimarConDelay()
+    public IEnumerator AbriElevador()
     {
-        yield return new WaitForSeconds(15f);
+        ElevadorOpen.Play();
 
-        if (ElevadorOpen != null)
-        {
-            
-
-
-        }
+        yield return null;
     }
-
-
-
 }

@@ -22256,6 +22256,61 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &1278226405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1278226407}
+  - component: {fileID: 1278226406}
+  m_Layer: 0
+  m_Name: Abrir Elevador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &1278226406
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278226405}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: ec2d80c5b84f9cb45b1814057c503505, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 2744788313061983041, guid: ec2d80c5b84f9cb45b1814057c503505, type: 2}
+    value: {fileID: 8697300782537430894}
+  - key: {fileID: -8417223967197700180, guid: ec2d80c5b84f9cb45b1814057c503505, type: 2}
+    value: {fileID: 4170613122299233698}
+  - key: {fileID: -4618887323625545803, guid: ec2d80c5b84f9cb45b1814057c503505, type: 2}
+    value: {fileID: 9084908848609926794}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &1278226407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278226405}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.360098, y: 1.2243195, z: 8.345401}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1319463772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58484,6 +58539,7 @@ MonoBehaviour:
   Funcion1: {fileID: 7602005378658757965}
   Funcion2: {fileID: 9067829890313655713}
   Funcion3: {fileID: 6443765610073876803}
+  ElevadorOpen: {fileID: 0}
 --- !u!4 &9155051864755631830
 Transform:
   m_ObjectHideFlags: 0
@@ -58870,3 +58926,4 @@ SceneRoots:
   - {fileID: 1810040461}
   - {fileID: 312450951}
   - {fileID: 1699374191}
+  - {fileID: 1278226407}
