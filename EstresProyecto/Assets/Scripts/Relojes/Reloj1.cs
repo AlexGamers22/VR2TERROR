@@ -11,7 +11,6 @@ public class Reloj1 : MonoBehaviour
     [SerializeField] private GameObject objetoExtra;
     [SerializeField] private AudioSource audioNotificacion;
     [SerializeField] private Material relojRenderer;
-    [SerializeField] private TextMeshProUGUI texto;
     [SerializeField] private TextMeshProUGUI[] textos;
 
     [Header("Parámetros de Tiempo")]
@@ -167,39 +166,5 @@ public class Reloj1 : MonoBehaviour
         textosActivados.Clear();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Indice") && puedeCambiar)
-        {
-            MostrarCanvas(!canvasActivo);
-            puedeCambiar = false;
 
-            if (canvasActivo && notificacionActiva)
-            {
-                relojAbiertoManual = true;
-
-                if (objetoExtra != null)
-                    objetoExtra.SetActive(true);
-
-                if (parpadeoCoroutine != null && relojRenderer != null)
-                {
-                    StopCoroutine(parpadeoCoroutine);
-                    relojRenderer.color = Color.black;
-                }
-
-                if (audioNotificacion != null)
-                    audioNotificacion.Stop();
-
-                notificacionActiva = false;
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Indice"))
-        {
-            puedeCambiar = true;
-        }
-    }
 }
