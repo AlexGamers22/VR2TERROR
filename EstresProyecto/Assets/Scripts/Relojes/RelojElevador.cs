@@ -16,12 +16,12 @@ public class RelojElevador : MonoBehaviour
     [SerializeField] private float parpadeoVelocidad = 0.5f;
     [SerializeField] private float activarNotificacionEscena = 5f;
     [SerializeField] private float tiempoActivarReloj = 15f;
-    [SerializeField] public float tiempoCerrarAutomatico = 15f;
+    [SerializeField] public float tiempoCerrarAutomatico = 10f;
 
     private bool canvasActivo = false;
     private bool puedeCambiar = true;
     private bool notificacionActiva = false;
-    private bool relojAbiertoManual = false; 
+    private bool relojAbiertoManual = false;
     private Color colorOriginal;
     private Coroutine parpadeoCoroutine;
     private Coroutine cerrarRelojCoroutine;
@@ -80,7 +80,7 @@ public class RelojElevador : MonoBehaviour
         if (canvasAActivar != null) canvasAActivar.SetActive(estado);
         if (mensajeNotificacion != null) mensajeNotificacion.SetActive(estado);
         if (objetoExtra != null) objetoExtra.SetActive(estado && notificacionActiva);
-                       
+
         if (estado)
         {
             if (cerrarRelojCoroutine != null)

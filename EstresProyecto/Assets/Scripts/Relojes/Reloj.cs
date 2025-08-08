@@ -16,7 +16,7 @@ public class Reloj : MonoBehaviour
     [SerializeField] private float parpadeoVelocidad = 0.5f;
     [SerializeField] private float activarNotificacionEscena = 5f;
     [SerializeField] private float tiempoActivarReloj = 15f;
-    [SerializeField] private float tiempoCerrarAutomatico = 10f;
+    [SerializeField] public float tiempoCerrarAutomatico = 10f;
 
     private bool canvasActivo = false;
     private bool puedeCambiar = true;
