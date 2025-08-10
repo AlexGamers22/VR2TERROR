@@ -105,15 +105,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 3
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.74
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 60
+    agentClimb: 0.53
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.24666667
     manualTileSize: 0
     tileSize: 256
     buildHeightMesh: 0
@@ -121,7 +121,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: a4d2281d12bd5e647abe553fb4c8439b, type: 2}
 --- !u!1 &5545632
 GameObject:
   m_ObjectHideFlags: 0
@@ -7699,17 +7699,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 195159842}
     - target: {fileID: 544025210648176736, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 544025210648176736, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
       propertyPath: m_SecondaryAttachTransform
       value: 
       objectReference: {fileID: 1335670716}
-    - target: {fileID: 544025210648176736, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4721714235286140405, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.472
@@ -7755,8 +7747,7 @@ PrefabInstance:
       value: Escritorio (25)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4425513997432821329, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e04d760447e07b2408327ed0bf8fde63, type: 3}
@@ -21625,7 +21616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1129890403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32746,7 +32737,7 @@ Transform:
   m_GameObject: {fileID: 919132148176550849}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.6967118, z: 0, w: 0.71735126}
-  m_LocalPosition: {x: -12.561, y: -1.265, z: 6.885}
+  m_LocalPosition: {x: -9.76, y: 0.124, z: 3.05}
   m_LocalScale: {x: 0.65529, y: 0.65529, z: 0.65529}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33163,7 +33154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4170613122299233697}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -3.5527137e-15, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -3.5527137e-15, z: 0, w: 1}
   m_LocalPosition: {x: -0.0001, y: -0.00867, z: 0}
   m_LocalScale: {x: 1.0201, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33622,7 +33613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3171553448867232300}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.00852, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33724,6 +33715,8 @@ GameObject:
   - component: {fileID: 543450652429525371}
   - component: {fileID: 259358554}
   - component: {fileID: 259358555}
+  - component: {fileID: 919132148176550851}
+  - component: {fileID: 919132148176550850}
   m_Layer: 0
   m_Name: Sofia
   m_TagString: Sofi
@@ -33731,6 +33724,43 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148176550850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148176550849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64a3f55f2239fa4eae7cc80e7abb758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugador: {fileID: 7696548425647342339}
+  timeline: {fileID: 1699374190}
+  animador: {fileID: 259358554}
+--- !u!195 &919132148176550851
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148176550849}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 0.87
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0.04
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &919132148427892331
 GameObject:
   m_ObjectHideFlags: 0
@@ -59014,7 +59044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842812674459994268}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -3.5527137e-15, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -3.5527137e-15, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.00841, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -59616,7 +59646,7 @@ MonoBehaviour:
   Funcion1: {fileID: 7602005378658757965}
   Funcion2: {fileID: 9067829890313655713}
   Funcion3: {fileID: 6443765610073876803}
-  ElevadorOpen: {fileID: 0}
+  ElevadorOpen: {fileID: 1278226406}
 --- !u!4 &9155051864755631830
 Transform:
   m_ObjectHideFlags: 0
