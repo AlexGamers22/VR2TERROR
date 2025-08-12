@@ -6,13 +6,19 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CamaraPC : MonoBehaviour
 {
-     public PlayableDirector timelineDirector; // Asigna el PlayableDirector (Timeline) desde el Inspector
-
+    public PlayableDirector timelineDirector; // Timeline que se reproduce
     private XRGrabInteractable grabInteractable;
+
     public GameObject Funcion1;
     public GameObject Funcion2;
     public GameObject Funcion3;
+    public GameObject Sofia;
     public PlayableDirector ElevadorOpen;
+
+    [Header("Movimiento del jugador")]
+    public Transform jugador;            // El objeto del jugador (XR Origin o cámara)
+    public Vector3 destino;              // Coordenadas destino
+    public float duracionMovimiento = 2f; // Tiempo que tardará en moverse
 
     void Awake()
     {
@@ -31,6 +37,7 @@ public class CamaraPC : MonoBehaviour
             Funcion1.SetActive(false);
             Funcion2.SetActive(false);
             Funcion3.SetActive(false);
+            Sofia.SetActive(true);
 
             // Escucha cuando termine la Timeline
             timelineDirector.stopped += OnTimelineTerminada;
@@ -50,7 +57,10 @@ public class CamaraPC : MonoBehaviour
         Funcion2.SetActive(true);
         Funcion3.SetActive(true);
 
-        // Deja de escuchar el evento (para evitar que se ejecute más de una vez)
+        // Mueve al jugador suavemente
+        StartCoroutine(MoverSuavementeJugador(jugador.position, destino, duracionMovimiento));
+
+        // Deja de escuchar el evento
         timelineDirector.stopped -= OnTimelineTerminada;
     }
 
@@ -66,7 +76,18 @@ public class CamaraPC : MonoBehaviour
     {
         if (ElevadorOpen != null)
             ElevadorOpen.Play();
-
         yield return null;
+    }
+
+    private IEnumerator MoverSuavementeJugador(Vector3 inicio, Vector3 fin, float duracion)
+    {
+        float tiempo = 0f;
+        while (tiempo < duracion)
+        {
+            jugador.position = Vector3.Lerp(inicio, fin, tiempo / duracion);
+            tiempo += Time.deltaTime;
+            yield return null;
+        }
+        jugador.position = fin;
     }
 }

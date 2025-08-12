@@ -21474,6 +21474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   escena: Nivel
+  tagObjetivo: Player
 --- !u!65 &1118922192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21967,6 +21968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetoADesactivar: {fileID: 5088983612584034307}
   TecladoTexto: {fileID: 1015487524}
+  finalelevador: {fileID: 0}
 --- !u!4 &1162284049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4283255218687869212, guid: ab4b33ee43d1a53478c0fc1e68a5a249, type: 3}
@@ -33761,7 +33763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &919132148176550850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43341,7 +43343,7 @@ Transform:
   m_GameObject: {fileID: 7313654229280890055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.63, y: -1, z: 6.157}
+  m_LocalPosition: {x: -2.88, y: -1.251, z: 5.949}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58840,7 +58842,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146340752499933439}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
@@ -59334,7 +59336,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122084617730858100}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
@@ -59684,7 +59686,11 @@ MonoBehaviour:
   Funcion1: {fileID: 7602005378658757965}
   Funcion2: {fileID: 9067829890313655713}
   Funcion3: {fileID: 6443765610073876803}
+  Sofia: {fileID: 919132148176550849}
   ElevadorOpen: {fileID: 1278226406}
+  jugador: {fileID: 4134505310913213785}
+  destino: {x: -2.88, y: -1.251, z: 5.949}
+  duracionMovimiento: 2
 --- !u!4 &9155051864755631830
 Transform:
   m_ObjectHideFlags: 0
@@ -59729,7 +59735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 7712547943391733906}
-  m_MoveSpeed: 1
+  m_MoveSpeed: 1.3
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1

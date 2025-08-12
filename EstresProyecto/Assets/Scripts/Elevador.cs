@@ -26,7 +26,7 @@ public class Elevador : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DesactivarBoton1.gameObject.SetActive(false);
+        
         if (other.CompareTag("Indice"))
         {
             if (director != null)
@@ -81,6 +81,7 @@ public class Elevador : MonoBehaviour
             {
                 CambiodeEscena.gameObject.SetActive(true);
                 ActivadorLuz.gameObject.SetActive(true);
+                DesactivarBoton1.gameObject.SetActive(false);
                 Bonton2.gameObject.SetActive(true);
                 animadorDespuesDeMover.Play(animacionDespuesDeMover);
 
