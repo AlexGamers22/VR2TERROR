@@ -5,20 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class TerminarEscena : MonoBehaviour
 {
-    public string escena;
+    public int indiceEscena; // Índice de la escena en Build Settings
     public string tagObjetivo = "Player";
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(tagObjetivo))
         {
-            StartCoroutine(CambiarEscenaConDelay(escena));
+            StartCoroutine(CambiarEscenaConDelay(indiceEscena));
         }
     }
 
-    private IEnumerator CambiarEscenaConDelay(string escena)
+    private IEnumerator CambiarEscenaConDelay(int indice)
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(escena);
+        SceneManager.LoadScene(indice);
     }
 }

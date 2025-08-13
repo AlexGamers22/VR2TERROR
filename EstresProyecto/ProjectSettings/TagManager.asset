@@ -9,6 +9,7 @@ TagManager:
   - Teclado
   - Indice
   - Sofi
+  - Carro
   layers:
   - Default
   - TransparentFX

@@ -106,9 +106,9 @@ NavMeshSettings:
     serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.74
-    agentHeight: 2
-    agentSlope: 60
-    agentClimb: 0.53
+    agentHeight: 1.61
+    agentSlope: 23.6
+    agentClimb: 0.24
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -15530,6 +15530,7 @@ MonoBehaviour:
   audioNotificacion: {fileID: 362986122}
   relojRenderer: {fileID: 2100000, guid: 7e93d33c163fecb46be331c4e2dd6884, type: 2}
   texto: {fileID: 2009950261}
+  objetoADesaparecer: {fileID: 628581453}
   parpadeoVelocidad: 0.5
   activarNotificacionEscena: 1
   tiempoActivarReloj: 2
@@ -17059,27 +17060,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.05810697, y: 0.06590819, z: 0.0024380903}
   m_Center: {x: 0.019053485, y: 0.042069674, z: -0.001827569}
---- !u!65 &790390653
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2226256449221981405}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3250565, y: 0.3595961, z: 0}
-  m_Center: {x: 0.00677415, y: -0.052940074, z: 1.1641532e-10}
 --- !u!114 &790390657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21455,7 +21435,7 @@ Transform:
   m_GameObject: {fileID: 1118922189}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00056, y: 0.00064, z: 0}
+  m_LocalPosition: {x: -0.01142, y: -0.01315, z: 0.01435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21473,7 +21453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f67b8c925b92944a7e485d349a3c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escena: Nivel
+  indiceEscena: 2
   tagObjetivo: Player
 --- !u!65 &1118922192
 BoxCollider:
@@ -21494,8 +21474,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0011990443, y: 0.0011159513, z: 0.00041364896}
-  m_Center: {x: 0.0000024219999, y: 0.000009707679, z: 0.0002458599}
+  m_Size: {x: 0.0011990443, y: 0.010531349, z: 0.010339892}
+  m_Center: {x: 0.0000024222848, y: 0.0047174105, z: -0.00096840016}
 --- !u!1 &1119712081
 GameObject:
   m_ObjectHideFlags: 0
@@ -21969,6 +21949,7 @@ MonoBehaviour:
   objetoADesactivar: {fileID: 5088983612584034307}
   TecladoTexto: {fileID: 1015487524}
   finalelevador: {fileID: 0}
+  AcivarEscena: {fileID: 0}
 --- !u!4 &1162284049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4283255218687869212, guid: ab4b33ee43d1a53478c0fc1e68a5a249, type: 3}
@@ -27021,7 +27002,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -1868273822134953576, guid: 756003ef3092e4a41b4f1d64b09d032e, type: 2}
-    value: {fileID: 7313654229280890056}
+    value: {fileID: 7873184976089449090}
   - key: {fileID: 6123561519003947891, guid: 756003ef3092e4a41b4f1d64b09d032e, type: 2}
     value: {fileID: 7965832664717934651}
   - key: {fileID: -5449702201693016243, guid: 756003ef3092e4a41b4f1d64b09d032e, type: 2}
@@ -29729,6 +29710,7 @@ MonoBehaviour:
   audioNotificacion: {fileID: 362986122}
   relojRenderer: {fileID: 2100000, guid: 7e93d33c163fecb46be331c4e2dd6884, type: 2}
   texto: {fileID: 2009950261}
+  objetoADesaparecer: {fileID: 0}
   parpadeoVelocidad: 0.5
   activarNotificacionEscena: 5
   tiempoActivarReloj: 15
@@ -29904,7 +29886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2005133636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37579,14 +37561,14 @@ GameObject:
   - component: {fileID: 1522521827247923015}
   - component: {fileID: 8382985208143935854}
   - component: {fileID: 6606347813992498682}
-  - component: {fileID: 790390653}
   - component: {fileID: 790390657}
+  - component: {fileID: 8382985208143935855}
   m_Layer: 0
   m_Name: Floor.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!1 &2239615023342466573
 GameObject:
@@ -43343,7 +43325,7 @@ Transform:
   m_GameObject: {fileID: 7313654229280890055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.88, y: -1.251, z: 5.949}
+  m_LocalPosition: {x: -1.336, y: -0.977, z: 5.949}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53452,7 +53434,7 @@ Transform:
   m_GameObject: {fileID: 7696548425647342336}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.6958055, z: 0, w: -0.71823025}
-  m_LocalPosition: {x: -8.5, y: 1, z: 1}
+  m_LocalPosition: {x: -8.5, y: 1.314, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53460,7 +53442,7 @@ Transform:
   - {fileID: 2160322978769398057}
   - {fileID: 1508558712}
   m_Father: {fileID: 4134505310913213785}
-  m_LocalEulerAnglesHint: {x: 0, y: 271.81702, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 269.588, z: 0}
 --- !u!114 &7712547943391733906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55651,6 +55633,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2226256449221981405}
+  m_Mesh: {fileID: 8634657762449747467, guid: 808b3ae408e79d144bfeeb41b0dfc665, type: 3}
+--- !u!64 &8382985208143935855
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226256449221981405}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 8634657762449747467, guid: 808b3ae408e79d144bfeeb41b0dfc665, type: 3}
 --- !u!4 &8408227631904012574
 Transform:
@@ -59668,8 +59672,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.011723651, y: 0.0058618253, z: 0.006128273}
-  m_Center: {x: -0.002553889, y: -0.0000000145286725, z: 0.0017613807}
+  m_Size: {x: 0.011723651, y: 0.0058618253, z: 0.0018966265}
+  m_Center: {x: -0.0025538888, y: -0.000000014602628, z: -0.0003544352}
 --- !u!114 &9150924972344101110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59688,9 +59692,6 @@ MonoBehaviour:
   Funcion3: {fileID: 6443765610073876803}
   Sofia: {fileID: 919132148176550849}
   ElevadorOpen: {fileID: 1278226406}
-  jugador: {fileID: 4134505310913213785}
-  destino: {x: -2.88, y: -1.251, z: 5.949}
-  duracionMovimiento: 2
 --- !u!4 &9155051864755631830
 Transform:
   m_ObjectHideFlags: 0

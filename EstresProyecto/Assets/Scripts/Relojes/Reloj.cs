@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -12,7 +12,10 @@ public class Reloj : MonoBehaviour
     [SerializeField] private Material relojRenderer;
     [SerializeField] private TextMeshProUGUI texto;
 
-    [Header("Par�metros de Tiempo")]
+    // 🔹 Objeto que quieres ocultar después de 5 segundos
+    [SerializeField] private GameObject objetoADesaparecer;
+
+    [Header("Parámetros de Tiempo")]
     [SerializeField] private float parpadeoVelocidad = 0.5f;
     [SerializeField] private float activarNotificacionEscena = 5f;
     [SerializeField] private float tiempoActivarReloj = 15f;
@@ -21,7 +24,7 @@ public class Reloj : MonoBehaviour
     private bool canvasActivo = false;
     private bool puedeCambiar = true;
     private bool notificacionActiva = false;
-    private bool relojAbiertoManual = false; 
+    private bool relojAbiertoManual = false;
     private Color colorOriginal;
     private Coroutine parpadeoCoroutine;
     private Coroutine cerrarRelojCoroutine;
@@ -148,6 +151,12 @@ public class Reloj : MonoBehaviour
                 }
             }
         }
+
+        // 🔹 Si detecta el tag Player, inicia el temporizador para desaparecer el objeto
+        if (other.CompareTag("Player") && objetoADesaparecer != null)
+        {
+            StartCoroutine(DesaparecerObjetoDespuesDe5Segundos());
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -156,5 +165,12 @@ public class Reloj : MonoBehaviour
         {
             puedeCambiar = true;
         }
+    }
+
+    // 🔹 Corrutina para desaparecer el objeto después de 5 segundos
+    private IEnumerator DesaparecerObjetoDespuesDe5Segundos()
+    {
+        yield return new WaitForSeconds(5f);
+        objetoADesaparecer.SetActive(false);
     }
 }

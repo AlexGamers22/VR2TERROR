@@ -105,15 +105,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 3
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.32
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 43.8
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.10666666
     manualTileSize: 0
     tileSize: 256
     buildHeightMesh: 0
@@ -121,7 +121,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 3d602773ec02b724e8a9c7afd6cc69a7, type: 2}
 --- !u!1 &4314459
 GameObject:
   m_ObjectHideFlags: 0
@@ -9085,7 +9085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &241638454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9098,7 +9098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f67b8c925b92944a7e485d349a3c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escena: Camino
+  indiceEscena: 4
   tagObjetivo: Player
 --- !u!65 &241638455
 BoxCollider:
@@ -19295,6 +19295,7 @@ MonoBehaviour:
   audioNotificacion: {fileID: 0}
   relojRenderer: {fileID: 0}
   texto: {fileID: 0}
+  objetoADesaparecer: {fileID: 0}
   parpadeoVelocidad: 0.5
   activarNotificacionEscena: 5
   tiempoActivarReloj: 15
@@ -22380,7 +22381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e4002d37506c04097a486fafd5db66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoAparece: {fileID: 0}
+  objetoAparece: {fileID: 228562130}
   Objetivo: {fileID: 83950819}
   Tip: {fileID: 1015487524}
   OtroTexto: {fileID: 996146665}
@@ -29623,9 +29624,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0399700a311b9c340a40b5516d913315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoADesactivar: {fileID: 0}
+  objetoADesactivar: {fileID: 228562130}
   TecladoTexto: {fileID: 1015487524}
   finalelevador: {fileID: 241638453}
+  AcivarEscena: {fileID: 241638453}
 --- !u!4 &1162284049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4283255218687869212, guid: ab4b33ee43d1a53478c0fc1e68a5a249, type: 3}
@@ -40019,7 +40021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e4002d37506c04097a486fafd5db66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetoAparece: {fileID: 0}
+  objetoAparece: {fileID: 228562130}
   Objetivo: {fileID: 1160934841}
   Tip: {fileID: 1968446634}
   OtroTexto: {fileID: 1119712081}
@@ -41929,7 +41931,7 @@ GameObject:
   - component: {fileID: 1968446637}
   - component: {fileID: 1968446636}
   m_Layer: 5
-  m_Name: Canvas (3)
+  m_Name: TECLADO TIP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46150,15 +46152,16 @@ GameObject:
   - component: {fileID: 2119695524919536672}
   - component: {fileID: 2119695524919536671}
   - component: {fileID: 2119695524919536675}
-  - component: {fileID: 2119695524919536674}
   - component: {fileID: 2119695524919536676}
+  - component: {fileID: 2119695524919536677}
+  - component: {fileID: 2119695524919536678}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1622422446366098541
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46683,29 +46686,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.391183, y: 2.0049872, z: 2.0488722}
   m_Center: {x: -0.0021948814, y: 0.99401546, z: 0.02413714}
---- !u!136 &2119695524919536674
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594691489540093604}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.37703884
-  m_Height: 1.7637942
-  m_Direction: 1
-  m_Center: {x: -0.004919052, y: 0.92149127, z: 0.014755368}
 --- !u!114 &2119695524919536675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46718,9 +46698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bd98d23d415f04a80efb28ef0b5be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velMovimiento: 0.5
-  velRotacion: 50
-  tiempoReaccion: 5
+  radioMovimiento: 5
+  velocidad: 1.5
+  jugador: {fileID: 572816659}
+  distanciaDeteccion: 3
 --- !u!54 &2119695524919536676
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46748,6 +46729,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!195 &2119695524919536677
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594691489540093604}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2.63
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!136 &2119695524919536678
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594691489540093604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.23
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.78, z: 0}
 --- !u!1 &2124945834573368397
 GameObject:
   m_ObjectHideFlags: 0

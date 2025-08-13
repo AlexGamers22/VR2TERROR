@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Escena Camino/Camino.unity
     guid: a8ce00120fa9c9f4fa3f894d96324f6a
+  - enabled: 1
+    path: Assets/Depa NIvel/Depa.unity
+    guid: 3c56547507732854686ecd69ab9532ac
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f69328ccedee63247ba320fa784a3c20, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a0d6674babb829f46af91b48c5f30e38, type: 2}

@@ -9,6 +9,7 @@ public class Teclado : MonoBehaviour
     public GameObject objetoADesactivar;  // El objeto que quieres desactivar cuando se detecte el trigger
     public GameObject TecladoTexto;
     public GameObject finalelevador;
+    public GameObject AcivarEscena;
     void OnTriggerEnter(Collider other)
     {
         // Verificamos si el objeto que entró tiene el tag "Teclado"
@@ -16,6 +17,7 @@ public class Teclado : MonoBehaviour
         {
             // Desactivamos el objeto que tiene este script
             gameObject.SetActive(false);
+            AcivarEscena.SetActive(true);
 
             // Desactivamos el objeto que se ha asignado a la referencia
             if (objetoADesactivar != null)

@@ -15,10 +15,7 @@ public class CamaraPC : MonoBehaviour
     public GameObject Sofia;
     public PlayableDirector ElevadorOpen;
 
-    [Header("Movimiento del jugador")]
-    public Transform jugador;            // El objeto del jugador (XR Origin o cámara)
-    public Vector3 destino;              // Coordenadas destino
-    public float duracionMovimiento = 2f; // Tiempo que tardará en moverse
+    
 
     void Awake()
     {
@@ -58,7 +55,7 @@ public class CamaraPC : MonoBehaviour
         Funcion3.SetActive(true);
 
         // Mueve al jugador suavemente
-        StartCoroutine(MoverSuavementeJugador(jugador.position, destino, duracionMovimiento));
+        
 
         // Deja de escuchar el evento
         timelineDirector.stopped -= OnTimelineTerminada;
@@ -79,15 +76,5 @@ public class CamaraPC : MonoBehaviour
         yield return null;
     }
 
-    private IEnumerator MoverSuavementeJugador(Vector3 inicio, Vector3 fin, float duracion)
-    {
-        float tiempo = 0f;
-        while (tiempo < duracion)
-        {
-            jugador.position = Vector3.Lerp(inicio, fin, tiempo / duracion);
-            tiempo += Time.deltaTime;
-            yield return null;
-        }
-        jugador.position = fin;
-    }
+    
 }
