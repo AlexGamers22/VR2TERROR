@@ -15,7 +15,7 @@ public class CamaraPC : MonoBehaviour
     public GameObject Sofia;
     public PlayableDirector ElevadorOpen;
 
-    
+    public GameObject desMusica;
 
     void Awake()
     {
@@ -30,6 +30,7 @@ public class CamaraPC : MonoBehaviour
     {
         if (timelineDirector != null)
         {
+            desMusica.SetActive(false);
             // Desactiva objetos
             Funcion1.SetActive(false);
             Funcion2.SetActive(false);
