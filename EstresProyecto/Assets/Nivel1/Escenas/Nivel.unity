@@ -68171,6 +68171,10 @@ PrefabInstance:
       value: sillon
       objectReference: {fileID: 0}
     - target: {fileID: 3475368518529768358, guid: ab4b33ee43d1a53478c0fc1e68a5a249, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475368518529768358, guid: ab4b33ee43d1a53478c0fc1e68a5a249, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
