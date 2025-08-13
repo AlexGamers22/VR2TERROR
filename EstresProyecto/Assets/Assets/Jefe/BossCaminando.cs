@@ -15,10 +15,12 @@ public class BossCaminando : MonoBehaviour
 
     private NavMeshAgent agente;
     private bool jugadorCerca = false;
+    private Animator animator; // Referencia al Animator
 
     void Start()
     {
         agente = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>(); // Obtener el Animator
 
         if (agente == null)
         {
@@ -33,20 +35,21 @@ public class BossCaminando : MonoBehaviour
 
     void Update()
     {
-        if (jugador == null) return; // Seguridad si no asignaste el jugador
+        if (jugador == null) return;
 
         float distanciaAlJugador = Vector3.Distance(transform.position, jugador.position);
 
         if (distanciaAlJugador <= distanciaDeteccion)
         {
-            // Si está cerca del jugador
             jugadorCerca = true;
             agente.isStopped = true;
             MirarAlJugador();
+
+            if (animator != null)
+                animator.SetBool("activo", false);
         }
         else
         {
-            // Si estaba cerca pero ya no
             if (jugadorCerca)
             {
                 jugadorCerca = false;
@@ -54,17 +57,18 @@ public class BossCaminando : MonoBehaviour
                 IrAPosicionAleatoria();
             }
 
-            // Si llegó a su destino, buscar otro
             if (!agente.pathPending && agente.remainingDistance < 0.5f)
             {
                 IrAPosicionAleatoria();
             }
-        }
+
+                if (animator != null)
+                    animator.SetBool("activo", !agente.isStopped && agente.velocity.magnitude > 0.1f);
+            }
     }
 
     void IrAPosicionAleatoria()
     {
-        // Busca un punto aleatorio en el NavMesh
         Vector3 puntoAleatorio = Random.insideUnitSphere * radioMovimiento + transform.position;
         NavMeshHit hit;
 
@@ -76,7 +80,6 @@ public class BossCaminando : MonoBehaviour
 
     void MirarAlJugador()
     {
-        // Rotar hacia el jugador sin inclinarse
         Vector3 direccion = (jugador.position - transform.position).normalized;
         direccion.y = 0;
 
