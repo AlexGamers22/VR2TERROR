@@ -11648,7 +11648,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VE A CASA
+  m_text: Regresa al trabajo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15727,7 +15727,7 @@ GameObject:
   - component: {fileID: 1701672016}
   - component: {fileID: 1701672015}
   - component: {fileID: 1701672014}
-  - component: {fileID: 1701672013}
+  - component: {fileID: 1701672017}
   - component: {fileID: 1701672012}
   m_Layer: 0
   m_Name: RelojCollider
@@ -15778,29 +15778,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1701672013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701672010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fdda3e29b5bd7348975f060897bb6ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasAActivar: {fileID: 718223798}
-  mensajeNotificacion: {fileID: 718223798}
-  objetoExtra: {fileID: 1520039887}
-  audioNotificacion: {fileID: 1968453260}
-  relojRenderer: {fileID: 2100000, guid: 7e93d33c163fecb46be331c4e2dd6884, type: 2}
-  texto: {fileID: 1242484380}
-  objetoADesaparecer: {fileID: 0}
-  parpadeoVelocidad: 0.5
-  activarNotificacionEscena: 5
-  tiempoActivarReloj: 15
-  tiempoCerrarAutomatico: 15
 --- !u!65 &1701672014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15872,6 +15849,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701672010}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1701672017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701672010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34199d12badc842438afde7c474fa09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasAActivar: {fileID: 718223798}
+  mensajeNotificacion: {fileID: 718223798}
+  objetoExtra: {fileID: 1520039887}
+  audioNotificacion: {fileID: 1968453260}
+  relojRenderer: {fileID: 2100000, guid: 7e93d33c163fecb46be331c4e2dd6884, type: 2}
+  texto: {fileID: 1242484380}
+  objetoADesaparecer: {fileID: 0}
+  objetoFadeOut: {fileID: 109034020}
+  parpadeoVelocidad: 0.5
+  activarNotificacionEscena: 5
+  tiempoActivarReloj: 8
+  tiempoCerrarAutomatico: 6
 --- !u!1 &1702226306
 GameObject:
   m_ObjectHideFlags: 0

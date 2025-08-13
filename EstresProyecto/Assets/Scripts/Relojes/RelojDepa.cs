@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Relojnivel2 : MonoBehaviour
 {
@@ -11,9 +12,8 @@ public class Relojnivel2 : MonoBehaviour
     [SerializeField] private AudioSource audioNotificacion;
     [SerializeField] private Material relojRenderer;
     [SerializeField] private TextMeshProUGUI texto;
-
-    // 🔹 Objeto que quieres ocultar después de 5 segundos
     [SerializeField] private GameObject objetoADesaparecer;
+    [SerializeField] public GameObject objetoFadeOut;
 
     [Header("Parámetros de Tiempo")]
     [SerializeField] private float parpadeoVelocidad = 0.5f;
@@ -95,6 +95,10 @@ public class Relojnivel2 : MonoBehaviour
             if (cerrarRelojCoroutine != null)
                 StopCoroutine(cerrarRelojCoroutine);
             cerrarRelojCoroutine = StartCoroutine(CerrarRelojAutomatico());
+
+            StartCoroutine(ActivarFadeoutYCambiarEscena());
+
+            
         }
         else
         {
@@ -104,6 +108,27 @@ public class Relojnivel2 : MonoBehaviour
                 cerrarRelojCoroutine = null;
             }
         }
+    }
+
+    private IEnumerator ActivarFadeoutYCambiarEscena()
+    {
+        yield return new WaitForSeconds(3f);
+
+        if (objetoFadeOut != null)
+        {
+            Animator animator = objetoFadeOut.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.Play("Fade out");
+            }
+        }
+        StartCoroutine(CambiarEscenaDespuesDe4Segundos());
+    }
+
+    private IEnumerator CambiarEscenaDespuesDe4Segundos()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("creditos");
     }
 
     private IEnumerator ParpadearMaterial()
@@ -152,7 +177,6 @@ public class Relojnivel2 : MonoBehaviour
             }
         }
 
-        // 🔹 Si detecta el tag Player, inicia el temporizador para desaparecer el objeto
         if (other.CompareTag("Player") && objetoADesaparecer != null)
         {
             StartCoroutine(DesaparecerObjetoDespuesDe5Segundos());
@@ -167,7 +191,6 @@ public class Relojnivel2 : MonoBehaviour
         }
     }
 
-    // 🔹 Corrutina para desaparecer el objeto después de 5 segundos
     private IEnumerator DesaparecerObjetoDespuesDe5Segundos()
     {
         yield return new WaitForSeconds(5f);
