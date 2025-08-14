@@ -34380,7 +34380,7 @@ MonoBehaviour:
   animador: {fileID: 259358554}
   distanciaDeteccion: 1
   plano: {fileID: 813082699}
-  limitesPlano: {x: 10, y: 10}
+  limitesPlano: {x: 5, y: 5}
   screamerImage: {fileID: 1687527798}
   screamerSound: {fileID: 8300000, guid: cca77f0d31b3ce841a70e633059ae297, type: 3}
   screamerDuration: 2
@@ -34396,8 +34396,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.87
-  m_Acceleration: 8
+  m_Speed: 0.75
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0.04
@@ -40402,7 +40402,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.75
+  m_Height: 1.5
   m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.5
